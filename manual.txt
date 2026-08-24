@@ -1,0 +1,201 @@
+================================================================================
+        VELVET FORK RESTAURANT WEBSITE - PROJECT RUN MANUAL
+================================================================================
+
+Project Name  : Creating a Website for a Restaurant (Velvet Fork)
+Project Type  : Full Stack Web Application
+Technologies  : HTML, CSS, JavaScript, Python Flask, SQLite Database
+
+================================================================================
+1. REQUIREMENTS (Before Running)
+================================================================================
+
+Make sure your computer has:
+
+  - Python 3 installed (Python 3.10 or above recommended)
+  - A web browser (Chrome, Firefox, Edge, etc.)
+  - Internet connection (for loading food images from online URLs)
+
+To check Python version, open terminal and run:
+
+  python3 --version
+
+================================================================================
+2. PROJECT LOCATION
+================================================================================
+
+Project folder path:
+
+  /home/niks_2801/Documents/restaurant-webapp
+
+Open terminal and go to project folder:
+
+  cd /home/niks_2801/Documents/restaurant-webapp
+
+================================================================================
+3. HOW TO RUN THE PROJECT (EASY METHOD)
+================================================================================
+
+Step 1: Open terminal
+
+Step 2: Go to project folder:
+
+  cd /home/niks_2801/Documents/restaurant-webapp
+
+Step 3: Make start script executable (only first time):
+
+  chmod +x start.sh
+
+Step 4: Run the project:
+
+  ./start.sh
+
+Step 5: Wait until you see message like:
+
+  Running on http://127.0.0.1:5000
+
+Step 6: Open browser and visit:
+
+  Website     : http://localhost:5000
+  Admin Panel : http://localhost:5000/admin.html
+
+IMPORTANT:
+  - Do NOT open index.html directly by double-clicking.
+  - Always run through Flask server URL (http://localhost:5000).
+
+================================================================================
+4. HOW TO RUN THE PROJECT (MANUAL METHOD)
+================================================================================
+
+If start.sh does not work, use these commands:
+
+  cd /home/niks_2801/Documents/restaurant-webapp
+  python3 -m venv venv
+  ./venv/bin/pip install -r backend/requirements.txt
+  ./venv/bin/python backend/app.py
+
+Then open browser:
+
+  http://localhost:5000
+
+================================================================================
+5. HOW TO STOP THE SERVER
+================================================================================
+
+In the terminal where server is running, press:
+
+  CTRL + C
+
+================================================================================
+6. ADMIN PANEL LOGIN
+================================================================================
+
+Admin URL      : http://localhost:5000/admin.html
+Default Password : admin123
+
+Admin features:
+  - View all customer orders
+  - View all table reservations
+  - See total revenue and statistics
+  - Update order/reservation status
+
+================================================================================
+7. HOW TO USE THE WEBSITE (USER SIDE)
+================================================================================
+
+1) Browse menu items and special burgers
+2) Use search and category filters
+3) Click "Add to Cart" for items
+4) Open cart and click "Checkout"
+5) Fill customer details and place order
+6) Use "Book a Table" section for reservations
+7) Switch light/dark theme using moon/sun button
+
+All orders and reservations are saved in database automatically.
+
+================================================================================
+8. PROJECT FILES STRUCTURE
+================================================================================
+
+restaurant-webapp/
+  |
+  |-- index.html          (Main website page)
+  |-- styles.css          (Website styling)
+  |-- script.js           (Website functionality)
+  |-- admin.html          (Admin dashboard page)
+  |-- admin.css           (Admin page styling)
+  |-- admin.js            (Admin functionality)
+  |-- start.sh            (Quick run script)
+  |-- manual.txt          (This file)
+  |-- README.md           (Project documentation)
+  |
+  |-- backend/
+        |-- app.py              (Flask server + API)
+        |-- database.py         (Database setup)
+        |-- requirements.txt    (Python packages)
+        |-- restaurant.db       (SQLite database - auto created)
+
+================================================================================
+9. DATABASE INFORMATION
+================================================================================
+
+Database file is created automatically at:
+
+  backend/restaurant.db
+
+Tables:
+  - menu_items
+  - burgers
+  - orders
+  - order_items
+  - reservations
+
+If you delete restaurant.db, it will be recreated when server starts again.
+
+================================================================================
+10. COMMON PROBLEMS AND SOLUTIONS
+================================================================================
+
+Problem: "python3: command not found"
+Solution: Install Python 3 on your system.
+
+Problem: Menu not loading / API error shown
+Solution:
+  - Make sure server is running (./start.sh)
+  - Open only http://localhost:5000 (not file:// path)
+
+Problem: Port already in use
+Solution:
+  - Stop old server using CTRL + C
+  - Or run on different port:
+      PORT=5001 ./venv/bin/python backend/app.py
+    Then open http://localhost:5001
+
+Problem: pip install permission error
+Solution:
+  - Use virtual environment method shown in Section 4
+  - Do not install packages system-wide
+
+Problem: Admin login failed
+Solution:
+  - Use password: admin123
+  - Ensure backend server is running
+
+Main modules:
+  1. Customer website (menu, cart, checkout, reservation)
+  2. Admin dashboard (manage orders and reservations)
+  3. REST API + Database integration
+
+This follows modern 3-tier web application architecture.
+
+================================================================================
+12. CONTACT DETAILS (PROJECT DEMO)
+================================================================================
+
+Restaurant Name : Velvet Fork
+Demo Phone      : +91 98765 43210
+Demo Email      : hello@velvetfork.in
+
+================================================================================
+                              END OF MANUAL
+================================================================================
