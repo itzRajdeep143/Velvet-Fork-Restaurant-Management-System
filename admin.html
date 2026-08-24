@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velvet Fork | Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body class="admin-body">
+    <section class="admin-login container" id="loginSection">
+      <div class="admin-login-card">
+        <h1>Admin Panel</h1>
+        <p>Sign in to manage orders and reservations.</p>
+        <form id="loginForm">
+          <input type="password" id="adminPassword" placeholder="Admin password" required />
+          <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        <p class="form-message" id="loginMessage"></p>
+        <a href="/" class="admin-back-link">← Back to website</a>
+      </div>
+    </section>
+
+    <section class="admin-dashboard hidden" id="dashboardSection">
+      <header class="admin-topbar container">
+        <div>
+          <h1>Velvet Fork Admin</h1>
+          <p>Restaurant management dashboard</p>
+        </div>
+        <div class="admin-top-actions">
+          <a href="/" class="btn btn-secondary">View Website</a>
+          <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <main class="container admin-main">
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <div class="admin-tabs">
+          <button class="chip active" data-tab="orders">Orders</button>
+          <button class="chip" data-tab="reservations">Reservations</button>
+        </div>
+
+        <div class="admin-panel" id="ordersPanel">
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Contact</th>
+                  <th>Items</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="admin-panel hidden" id="reservationsPanel">
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Contact</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Guests</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="reservationsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
