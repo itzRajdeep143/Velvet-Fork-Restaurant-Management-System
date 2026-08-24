@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velvet Fork | Modern Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <nav class="navbar container">
+        <a href="#home" class="brand">
+          <span class="brand-mark">VF</span>
+          <span>Velvet Fork</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#burgers">Special Burgers</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#reservation">Reservation</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-button" id="themeToggle" aria-label="Toggle theme">🌙</button>
+          <button class="cart-button" id="openCart">
+            Cart <span id="cartCount">0</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-text">
+          <p class="tag">Fresh. Fast. Flavorful.</p>
+          <h1>Restaurant-style meals delivered with modern convenience.</h1>
+          <p>
+            Explore handcrafted dishes, reserve your table, and order your favorites in seconds.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#menu">Order Now</a>
+            <a class="btn btn-secondary" href="#reservation">Reserve Table</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Today’s Special</h3>
+          <p class="special-name">Truffle Paneer Sizzler</p>
+          <p class="special-desc">Served with herbed rice, grilled veggies, and garlic cream sauce.</p>
+          <p class="special-price">₹499</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="menu">
+        <div class="section-head">
+          <h2>Popular Menu</h2>
+          <p>Filter dishes by category and add your picks to cart.</p>
+        </div>
+        <div class="menu-controls">
+          <input id="searchInput" type="text" placeholder="Search dishes..." />
+          <div class="filters" id="categoryFilters"></div>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <section class="section container" id="burgers">
+        <div class="section-head">
+          <h2>Special Burgers</h2>
+          <p>Chef-crafted signature burgers with bold flavors.</p>
+        </div>
+        <div class="offers-grid" id="burgersGrid"></div>
+      </section>
+
+      <section class="section offers" id="offers">
+        <div class="container offers-grid">
+          <article class="offer-card">
+            <h3>Weekend Combo</h3>
+            <p>Get 20% off on 2 mains + 2 beverages.</p>
+          </article>
+          <article class="offer-card">
+            <h3>Free Delivery</h3>
+            <p>On all orders above ₹599, every day 6PM onwards.</p>
+          </article>
+          <article class="offer-card">
+            <h3>Loyalty Rewards</h3>
+            <p>Earn points every order and unlock free desserts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="reservation">
+        <div class="section-head">
+          <h2>Book a Table</h2>
+          <p>Quick reservation with instant on-screen confirmation.</p>
+        </div>
+        <form class="reservation-form" id="reservationForm">
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <input type="email" id="email" name="email" placeholder="Email address" required />
+          <input type="tel" id="resPhone" name="phone" placeholder="Phone number" required />
+          <input type="date" id="date" name="date" required />
+          <input type="time" id="time" name="time" required />
+          <input type="number" id="guests" name="guests" placeholder="Guests" min="1" max="20" required />
+          <button class="btn btn-primary" type="submit">Confirm Reservation</button>
+        </form>
+        <p class="form-message" id="reservationMessage"></p>
+      </section>
+
+      <section class="section testimonials" id="reviews">
+        <div class="container">
+          <div class="section-head">
+            <h2>What Guests Say</h2>
+            <p>Trusted by food lovers across the city.</p>
+          </div>
+          <div class="review-grid">
+            <article class="review-card">
+              <p>"Great ambiance and very fast service. The pasta was excellent."</p>
+              <h4>- Aisha R.</h4>
+            </article>
+            <article class="review-card">
+              <p>"Loved the online ordering experience, clean and super easy."</p>
+              <h4>- Daniel K.</h4>
+            </article>
+            <article class="review-card">
+              <p>"Reservation worked perfectly and the staff was very friendly."</p>
+              <h4>- Priya M.</h4>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer-content">
+        <div>
+          <h3>Velvet Fork</h3>
+          <p>221 Flavor Street, Downtown</p>
+          <p>Open Daily: 10:00 AM - 11:30 PM</p>
+        </div>
+        <div>
+          <p>Phone: +91 98765 43210</p>
+          <p>Email: hello@velvetfork.in</p>
+          <p><a href="/admin.html">Admin Dashboard</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="checkoutModal">
+      <div class="modal-card">
+        <div class="cart-header">
+          <h3>Checkout</h3>
+          <button class="icon-button" id="closeCheckout" aria-label="Close checkout">✕</button>
+        </div>
+        <form class="checkout-form" id="checkoutForm">
+          <input type="text" id="customerName" placeholder="Full name" required />
+          <input type="email" id="customerEmail" placeholder="Email address" required />
+          <input type="tel" id="customerPhone" placeholder="Phone number" required />
+          <input type="text" id="customerAddress" placeholder="Delivery address" required />
+          <button class="btn btn-primary" type="submit">Place Order</button>
+        </form>
+        <p class="form-message" id="checkoutMessage"></p>
+      </div>
+    </div>
+
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="icon-button" id="closeCart" aria-label="Close cart">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <p>Total: <strong id="cartTotal">₹0</strong></p>
+        <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+      </div>
+    </aside>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
